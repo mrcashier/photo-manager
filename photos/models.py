@@ -20,3 +20,6 @@ class Photo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # Fecha automatica de agregado
     modified_at = models.DateTimeField(auto_now=True)  # Fecha automatica de modificacion
     license = models.CharField(max_length=3, choices=LICENCES)
+
+    def __unicode__(self):
+        return self.name + ' ' + self.description
